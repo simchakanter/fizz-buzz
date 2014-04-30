@@ -17,29 +17,32 @@ $(document).ready(function() {
     }
     else {
       $('#error-message').hide();
-      for (var i = 1; i < maxNumber; i++) {
-        if (i % 3 === 0) {
-          if (i % 5 === 0) {
-            results.push("fizzbuzz");
-          } else {
-            results.push("fizz");
-          }
-        }
-        else if (i % 5 === 0) {
-          if (i % 3 === 0) {
-            results.push("fizzbuzz");
-          } else {
-            results.push("buzz");
-          }
-        }
-        else {
-          results.push(i);
-        }
-      }
+      fizzBuzz(maxNumber);
       for (var j = 0; j < results.length; j++) {
         $('<li>' + results[j] + '</li>').appendTo('#list-of-numbers');
       }
     }
   });
-
 });
+
+function fizzBuzz (maxLimit) {
+  for (var i = 1; i < maxNumber; i++) {
+    if (i % 3 === 0) {
+      if (i % 5 === 0) {
+        results.push("fizzbuzz");
+      } else {
+        results.push("fizz");
+      }
+    }
+    else if (i % 5 === 0) {
+      if (i % 3 === 0) {
+        results.push("fizzbuzz");
+      } else {
+        results.push("buzz");
+      }
+    }
+    else {
+      results.push(i);
+    }
+  }
+}
